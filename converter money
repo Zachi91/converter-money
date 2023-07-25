@@ -1,0 +1,78 @@
+double currencyCount;
+double rubToUsd = 0.011;
+double rubToEur = 0.010;
+double usdToRub = 90.20;
+double usdToEur = 0.90;
+double eurToRub = 99.66;
+double eurToUsd = 1.10;
+double balanceRub;
+double balanceUsd;
+double balanceEur;
+double userInput;
+
+Console.WriteLine("Здравствуйте! Это конвертер валют. Введите Ваш баланс рублей.");
+balanceRub = Convert.ToSingle(Console.ReadLine());
+Console.WriteLine("Теперь введите Ваш баланс долларов.");
+balanceUsd = Convert.ToSingle(Console.ReadLine());
+Console.WriteLine("Теперь введите Ваш баланс евро.");
+balanceEur = Convert.ToSingle(Console.ReadLine());
+Console.WriteLine("Теперь выберете конвертацю.");
+Console.WriteLine("1 руб | 2 доллар | 3 евро");
+Console.WriteLine("Пример 12 - конвертация руб в доллары.");
+userInput = Convert.ToDouble(Console.ReadLine());
+if (userInput == 12)
+{
+    Console.WriteLine("Вы выбрали конвертацию рубли в доллары");
+    Console.WriteLine("сколько вы хотите обменять?");
+    currencyCount = Convert.ToDouble(Console.ReadLine());
+    balanceRub -= currencyCount;
+    balanceUsd += currencyCount * rubToUsd;
+    Console.WriteLine($"У вас теперь - {balanceUsd} долларов и {balanceRub} рублей.");
+}
+if (userInput == 21)
+{
+    Console.WriteLine("Вы выбрали конвертацию доллары в рубли");
+    Console.WriteLine("сколько вы хотите обменять?");
+    currencyCount = Convert.ToDouble(Console.ReadLine());
+    balanceUsd -= currencyCount;
+    balanceRub += currencyCount * usdToRub;
+    Console.WriteLine($"У вас теперь - {balanceRub} рублей и {balanceUsd} долларов.");
+}
+if (userInput == 13)
+{
+    Console.WriteLine("Вы выбрали конвертацию рубли в евро");
+    Console.WriteLine("сколько вы хотите обменять?");
+    currencyCount = Convert.ToDouble(Console.ReadLine());
+    balanceRub -= currencyCount;
+    balanceEur += currencyCount * rubToEur;
+    Console.WriteLine($"У вас теперь - {balanceEur} евро и {balanceRub} рублей.");
+}
+if (userInput == 31)
+{
+    Console.WriteLine("Вы выбрали конвертацию евро в рубли");
+    Console.WriteLine("сколько вы хотите обменять?");
+    currencyCount = Convert.ToDouble(Console.ReadLine());
+    balanceEur -= currencyCount;
+    balanceRub += currencyCount * eurToRub;
+    Console.WriteLine($"У вас теперь - {balanceRub} руб и {balanceEur} евро.");
+}
+if (userInput == 23)
+{
+    Console.WriteLine("Вы выбрали конвертацию доллары в евро");
+    Console.WriteLine("сколько вы хотите обменять?");
+    currencyCount = Convert.ToDouble(Console.ReadLine());
+    balanceUsd -= currencyCount ;
+    balanceEur += currencyCount * usdToEur;
+    Console.WriteLine($"У вас теперь - {balanceEur} евро и {balanceUsd} долларов.");
+}
+if (userInput == 32)
+{
+    Console.WriteLine("Вы выбрали конвертацию евро в доллары");
+    Console.WriteLine("сколько вы хотите обменять?");
+    currencyCount = Convert.ToDouble(Console.ReadLine());
+    balanceEur -= currencyCount;
+    balanceUsd += currencyCount * eurToUsd;
+    Console.WriteLine($"У вас теперь - {balanceUsd} долларов и {balanceEur} евро.");
+}
+
+    Console.ReadKey();
